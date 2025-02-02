@@ -150,6 +150,7 @@ colorOptions.forEach(btn => {
 
 newGameBtn.addEventListener('click', () => {
   colorBox.classList.remove('pulse');
+  score = 0;
   initializeGame();
 });
 

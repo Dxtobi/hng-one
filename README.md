@@ -2,7 +2,7 @@
 
 A fun and interactive web game that tests your color recognition skills. Match the target color with the correct option to score points!
 
-[Live Demo](#) 🔗 *(Replace with your deployment link)*
+[Live Demo](#) 🔗 *(https://hng-one-xpxy.onrender.com)*
 
 ## Features ✨
 - 🟥 Color matching challenge with 20+ different colors
