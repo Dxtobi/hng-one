@@ -58,9 +58,11 @@ function handleColorClick(e) {
     setTimeout(() => {
       hideModal();
       initializeGame();
-    }, 3000);
+    }, 2000);
   } else {
-    score = Math.max(0, score - 1); // Prevent negative scores
+    colorBox.classList.add('pulse');
+
+    score = Math.max(0, score - 1); 
     scoreElement.textContent = score;
     showModal(false);
     
@@ -73,6 +75,7 @@ function handleColorClick(e) {
 }
 
 function initializeGame() {
+  colorBox.classList.remove('pulse');
   hideModal();
   gameActive = true;
   targetColor = colors[Math.floor(Math.random() * colors.length)];
@@ -120,27 +123,7 @@ function getContrastColor(hex) {
   const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
   return luminance > 0.6 ? '#000000' : '#FFFFFF';
 }
-// function handleColorClick(e) {
-//   if (!gameActive) return;
-  
-//   const selectedColor = rgbToHex(e.target.style.backgroundColor);
-//   e.target.classList.add('shake');
-  
-//   console.log(selectedColor, targetColor);
 
-//   if (selectedColor.toLowerCase() === targetColor.toLowerCase()) {
-//     gameActive = false;
-//     score++;
-//     scoreElement.textContent = score;
-//     gameStatus.textContent = 'Correct! Well done!';
-//     colorBox.classList.add('pulse');
-//     colorOptions.forEach(btn => btn.disabled = true);
-//   } else {
-//     // score--;
-//     gameStatus.textContent = 'Incorrect! Try again!';
-//     e.target.disabled = true;
-//   }
-// }
 
 colorOptions.forEach(btn => {
   btn.addEventListener('click', handleColorClick);
@@ -150,8 +133,9 @@ colorOptions.forEach(btn => {
 
 newGameBtn.addEventListener('click', () => {
   colorBox.classList.remove('pulse');
-  score = 0;
   initializeGame();
+  score = 0;
+  scoreElement.textContent = score;
 });
 
 
