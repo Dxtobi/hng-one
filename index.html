@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Guessing Game</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+   
+
+    <div class="container">
+      <div class="color-box" data-testid="colorBox"></div>
+      <div>
+        <p data-testid="gameInstructions" class="instructions">
+          Guess the color displayed above from the options below!
+        </p>
+        <p data-testid="gameStatus" class="status"></p>
+        <div class="score-container">
+          Score: <span data-testid="score" class="score">0</span>
+        </div>
+        <div class="options-grid">
+          <button data-testid="colorOption" class="color-option"></button>
+          <button data-testid="colorOption" class="color-option"></button>
+          <button data-testid="colorOption" class="color-option"></button>
+          <button data-testid="colorOption" class="color-option"></button>
+          <button data-testid="colorOption" class="color-option"></button>
+          <button data-testid="colorOption" class="color-option"></button>
+        </div>
+  
+       
+        <button data-testid="newGameButton" class="new-game-btn">
+          New Game
+        </button>
+      </div>
+    </div>
+    <div class="modal-overlay" data-testid="modalOverlay">
+      <div class="modal correct-modal">
+        <h2>🎉 Correct! 🎉</h2>
+        <p>Well done! New round starting...</p>
+      </div>
+      <div class="modal wrong-modal">
+        <h2>❌ Wrong! ❌</h2>
+        <p>Try again!</p>
+      </div>
+    </div>
+    
+    <audio id="correctSound" src="/correct.mp3"></audio>
+    <audio id="wrongSound" src="/wrong.mp3"></audio>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

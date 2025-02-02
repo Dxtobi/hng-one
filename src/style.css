@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b1b1b;
+}
+
+.container {
+  background: #121212;
+  color:white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  margin: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.color-box {
+  width: 200px;
+  height: 200px;
+  margin: 1rem auto;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.color-option {
+  height: 80px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.color-option:hover {
+  transform: scale(1.05);
+}
+
+.color-option:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.instructions {
+  color: #a9a8a8;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.status {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  min-height: 24px;
+}
+
+.score-container {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.new-game-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+/* .new-game-btn:hover {
+  background: #45a049;
+} */
+
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.pulse {
+  animation: pulse 0.5s ease-in-out;
+}
+
+@media (max-width: 480px) {
+  .options-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .color-box {
+    width: 100%;
+    height: 150px;
+    
+  }
+  .container {
+  display: block;
+  background:none
+}
+
+}
+
+/* Add these styles to your CSS */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  animation: modalEnter 0.3s ease-out;
+  max-width: 300px;
+  width: 90%;
+}
+
+.correct-modal {
+  background: #4CAF50;
+  color: white;
+}
+
+.wrong-modal {
+  background: #f44336;
+  color: white;
+}
+
+@keyframes modalEnter {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes modalExit {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
