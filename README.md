@@ -42,3 +42,4 @@ A fun and interactive web game that tests your color recognition skills. Match t
 1. Clone the repository:
    ```bash
    git clone https://github.com/Dxtobi/hng-one.git
+   
